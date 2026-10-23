@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .form{
+        display: flex;
+        flex-direction: column;
+        max-width: 200px;
+        gap: 12px;
+
+    }
+</style>
+<body>
+   <div>
+    <form class="form">
+        <label for="">name</label>
+        <input type="text" name="username" id="username" placeholder="enter your username">
+        <input type="email" name="email" id="email" placeholder="enter your email">
+        <select name="" id="course">
+            <option value="choose course">choose course</option>
+            <option value="HTML">HTML</option>
+            <option value="CSS">CSS</option>
+            <option value="Java Script">Java Script</option>
+        </select>
+
+        <input type="password" name="pass" id="pass" placeholder="enter your password">
+        <input type="submit" name="" id="submit">
+    </form>
+
+    <p id="message"></p>
+    <p id="output">Name:  | Email:  | Course:  | Pass: </p>
+   </div> 
+</body>
+<script>
+    let nameInput = document.getElementById("username")
+    let email = document.getElementById("email")
+    let password = document.getElementById("pass")
+    let course = document.getElementById("course")
+     
+    let submitBtn = document.getElementById("submit")
+    let message = document.getElementById("message")
+    let output = document.getElementById("output")
+
+
+    submitBtn.addEventListener("click", (event)=>{
+        event.preventDefault()
+        console.log(nameInput.value)
+
+        if (nameInput.value.trim() === "") {
+            message.innerText = "name is invalid"
+            return;
+        }
+        if (email.value.trim() === "") {
+            message.innerText = "email is invalid"
+            return;
+        }
+         
+        if (password.value === "") {
+            message.innerText = "password is invalid"
+            return;
+        }
+
+         if (course.value === "") {
+            message.innerText = "course is invalid"
+            return;
+        }
+        else{
+            message.innerText = "submit success"
+        
+            output.innerText = "Name:" + nameInput.value + "Email:" + email.value + "Course:" + course.value +"Pass:" + password.value
+            
+        }
+        
+    })
+</script>
+</html>

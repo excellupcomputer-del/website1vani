@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <div id="box">
+        <h1 id="head">hello</h1>
+        <button onclick="change()" id="btn">click me </button>
+        <P id="para">Lorem ipsum dolor sit amet consectetur adipisicing elit.</P>
+        <button ondblclick=""></button>
+    </div>
+</body>
+
+<script>
+
+    let headText = document.querySelector("#head")
+    console.log(headText);
+
+    let btnText = document.querySelector("#btn")
+    console.log(btn);
+
+    let boxText = document.querySelector("#box")
+    console.log(box);
+
+    let paraText = document.querySelector("#para")
+    console.log(para);
+    
+
+    
+    
+// style
+    headText.style.color = "red"
+    boxText.style.backgroundColor = "yellow"
+    boxText.style.border = "2px solid"
+    btnText.style.fontSize = "20px"
+    paraText.style.textAlign = "center"
+  
+
+    // event
+  function change(){
+    console.log("button clicked");
+    headText.style.color = "blue";
+    boxText.style.backgroundColor = "pink"
+  }
+  
+
+    
+
+</script>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .highlight {
+        color: white;
+        background-color: black;
+
+    }
+</style>
+
+<body id="box" onclick="change">
+
+    <h1 id="head">welcome to java script</h1>
+    <p id="para">Nice to meet you</p>
+    <button onclick="change()" id="btn">change in to dark them</button>
+
+
+    <script>
+        let headText = document.querySelector("#head")
+        console.log(headText);
+
+
+        let btnText = document.querySelector("#btn")
+        console.log(btnText);
+
+        let box = document.querySelector("#box")
+        console.log(box);
+
+        let paraText = document.querySelector("#para")
+        console.log(paraText);
+
+        function change() {
+            box.classList.toggle("highlight")
+            if (
+                btnText.innerText === "change in to dark them") {
+                btnText.innerText = "change in to light them"
+            } else {
+                btnText.innerText = "change in to dark them"
+            }
+
+            // btnText.innerText =  "change in to light them "
+
+        }
+
+    </script>
+</body>
+
+</html>

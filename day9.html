@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=div, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <h1 id="head">Hello</h1>
+        <h2 id="title">flower</h2>
+
+     <button id="btn">click me </button>
+     <br>
+
+    <br>
+     <button id="sbt">submit</button>
+
+     <p class="box">Lorem ipsum dolor </p>
+     <p class="box">Lorem ipsum dolor </p>
+
+
+     <p class="prg" >learn your notes </p>
+     <p class="prg">complete your notes</p>
+     <p class="prg">write this note </p>
+
+
+     <ul id="Fruit">
+
+     </ul>
+
+     <button onclick="changeColor()" id="button">change your output</button>
+
+    </div>
+</body>
+     <script>
+        let headText = document.getElementById("head")
+
+        console.log( headText);
+        headText.innerText = "Welcome to ";
+
+        let til = document.getElementById("title")
+        console.log(til);
+
+        let btnText = document.getElementById("btn") 
+         
+        btnText.innerText = "clicked";
+
+        let box = document.getElementsByClassName("box")
+        console.log(box);
+        
+
+        let prgText = document.getElementsByClassName("prg")
+        console.log(prgText[0]);
+        
+        prgText[0].innerText = " learning DOM";
+
+        let sbtText = document.querySelector("#sbt")
+        console.log(sbtText);
+        sbtText.innerHTML = "<h5>Hello</h5>"
+        
+
+
+        console.log(document.querySelector("#head"));
+        console.log(document.querySelector(".prg"));
+        console.log(document.querySelectorAll(".box"));
+        // console.log(document.querySelector("#sbt"));
+
+        let list = document.querySelector("#Fruit")
+        let child = document.createElement("li")
+
+
+        child.innerText = "Pine Apple"
+        list.appendChild(child)
+
+        // list.innerHTML = child;
+
+        console.log("child", child );
+
+        
+
+        // style method
+        headText.style.color = "purple";
+
+
+        // event
+        function changeColor(){
+            headText.style.color = "orange";
+            headText.innerText = headText.innerText + "vani";
+        }
+      
+        
+     </script>
+</html>

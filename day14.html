@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .div1{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        /* max-width: 200px;
+        gap: 20px; */
+        
+    }
+
+    .div2{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 2px;
+    }
+</style>
+<body>
+    <div class="div1">
+        <h1>Counter</h1> 
+        <h1 id="count">0</h1>
+         </div> 
+
+         <div class = "div2">
+        <button onclick="decrease()" id="minus">-</button>
+        <button onclick="reset()" id="reset">Reset</button>
+        <button onclick="increase()" id="plus">+</button>
+</div>
+
+    
+</body>
+<script>
+    let count = 0
+    let head = document.getElementById("count")
+    let button = document.getElementById("minus")
+    let btn = document.getElementById("reset")
+    let Btn = document.getElementById("plus")
+
+    function increase(){
+        count = count + 1;
+        console.log(count);
+        head.innerText = count;
+    }
+
+    function decrease(){
+      count = count - 1;
+      console.log(count);
+      head.innerText = count;
+    }
+
+    function reset(){
+     count = 0
+     console.log(count);
+     head.innerText = count;
+    }
+</script>
+</html>
