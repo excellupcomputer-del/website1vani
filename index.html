@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Rock | Paper | Scissor</h1>
+
+    <div>
+        <h2>
+            <span>user:</span>
+            <span id="user"></span>
+        </h2>
+        <h2>
+            <span>computer:</span>
+            <span id="computer"></span>
+        </h2>
+        <h2>
+            <span>result:</span>
+            <span id="result"></span>
+        </h2>
+    </div>
+    <button onclick="choose('rock')">Rock</button>
+    <button onclick="choose('paper')">Paper</button>
+    <button onclick="choose('scissor')">Scissor</button>
+    </body>
+
+   <script>
+
+    let userBox = document.getElementById("user")
+    let computerBox = document.getElementById("computer")
+    let resultBox = document.getElementById("result")
+    let game = ["rock", "paper", "scissor"];
+    let computerChoice;
+
+    function choose(user){
+        // console.log(user);
+        userBox.textContent = user
+        let index = Math.floor(Math.random()*3)
+
+        computerChoice = game[index];
+        console.log(computerChoice);
+        computerBox.innerText = computerChoice
+        
+
+        if(user == "rock" && computerChoice == "scissor"){ 
+            userBox.textContent = "user win";
+        }
+        else if(user == "scissor" && computerChoice == "paper"){
+             userBox.textContent = "user win";
+        }
+        else if(user == "paper" && computerChoice == "rock"){
+             userBox.textContent = "user win";
+        }
+        else if(user == computerChoice){
+              userBox.textContent = "match draw";
+        }
+        else{
+            console.log("computer win");
+            resultBox.innerText = "computer win"
+            
+        }
+
+    }
+   </script> 
+
+</html>
