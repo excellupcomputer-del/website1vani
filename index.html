@@ -32,6 +32,7 @@
     let userBox = document.getElementById("user")
     let computerBox = document.getElementById("computer")
     let resultBox = document.getElementById("result")
+
     let game = ["rock", "paper", "scissor"];
     let computerChoice;
 
@@ -46,16 +47,16 @@
         
 
         if(user == "rock" && computerChoice == "scissor"){ 
-            userBox.textContent = "user win";
+            resultBox.textContent = "user win";
         }
         else if(user == "scissor" && computerChoice == "paper"){
-             userBox.textContent = "user win";
+             resultBox.textContent = "user win";
         }
         else if(user == "paper" && computerChoice == "rock"){
-             userBox.textContent = "user win";
+             resultBox.textContent = "user win";
         }
         else if(user == computerChoice){
-              userBox.textContent = "match draw";
+              resultBox.textContent = "match draw";
         }
         else{
             console.log("computer win");
