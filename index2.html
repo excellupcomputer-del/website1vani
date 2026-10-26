@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .body{
+
+        }
+        #head{
+            text-align: center;
+        }
+        .container{
+            border: 1px solid gray;
+            height: 400px;
+            width: 400px;
+            /* justify-content: center;
+             align-items: center; */
+            text-align: center;
+            background-color: aliceblue;
+            border-radius: 5%;
+            /* display: flex; */
+            margin-left: auto;
+            margin-right: auto;}
+
+        #userabout{
+            color: gray;
+        }
+
+        #profile{
+            height: 270px;
+            width: 270px;
+            align-items: center;
+            border-radius: 50%;
+            margin-top: 15px;    
+        }
+
+
+        #output{
+            text-align: center;
+            color: green;
+        }
+    </style>
+</head>
+<body class="body">
+    <h1 id="head">Automatic User Profile Slider</h1>
+
+    <div class="container">
+        <img src="https://www.mcgill.ca/web-services/files/web-services/styles/hd/public/marco-xu-toupbco62lw-unsplash_cropped.jpg?itok=vnN8-uiS&timestamp=1708957693" alt="" id="profile">
+        <h2 id="username">Priya Verma</h2>
+        <h3 id="userabout">Full Stack Developer</h3>
+    </div>
+
+    <h2 id="output">Profile Slider Stopped</h2>
+
+    <script>
+        let users = [{ image : "https://cdn.pixabay.com/photo/2022/08/08/19/36/landscape-7373484_640.jpg",
+                    name : "Mahi Gupta",
+                    about : "Nature Profile",
+        },
+    {
+        image : "https://img.magnific.com/premium-photo/beautiful-spring-flowers-with-green-grass_750621-4501.jpg?semt=ais_hybrid&w=740&q=80",
+        name : "Chesta Verma",
+        about : "Flower Profile",
+    },
+    {
+        image : "https://t4.ftcdn.net/jpg/06/23/66/03/360_F_623660368_MGRElbKnwsyXi41CIS5hjBLvEG6ffxK8.jpg",
+        name : "Vansh Gupta",
+        about : "Sunset Profile",
+
+    },
+    {
+        image : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSDfmfQ76Up8oCQ7-QH3rvnBfymKmLI3Z7oJ3MnXYPrzvIuStV76hNRddk&s=10",
+        name : "Mohit Verma",
+        about : "Animal Profile",
+    }]
+
+    let image = document.getElementById("profile") 
+    let username = document.getElementById("username")
+    let about = document.getElementById("userabout")
+    let output = document.getElementById("output")
+
+    let index = 0;
+    let interval = setInterval(function(){
+        index++;
+        if(index >= users.length){
+            index = 0 ;
+        };
+        image.src = users [index].image;
+        username.innerHTML = users [index].name;
+        console.log(username);
+        about.innerHTML = users [index].about;
+        output.innerText = "Slide Automatic";
+        
+    },2000)
+
+setTimeout(() =>{
+      clearInterval(interval);
+      output.textContent = "Done"  
+    },10000)
+    </script>
+</body>
+</html>
